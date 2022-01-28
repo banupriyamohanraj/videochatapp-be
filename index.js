@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 9000;
 const dbURL = process.env.DB_URL || 'mongodb://127.0.0.1:27017'
 app.use("/auth",userAuth)
 
-
+    
 
 app.get("/",(req,res)=>{
     res.send("server running")
@@ -32,7 +32,7 @@ io.on("connection", (socket) => {
 	socket.on("disconnect", () => {
 		socket.broadcast.emit("callEnded")
 	});
-
+ 
 	socket.on("callUser", ({ userToCall, signalData, from, name }) => {
 		io.to(userToCall).emit("callUser", { signal: signalData, from, name });
 	});
