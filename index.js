@@ -20,8 +20,6 @@ const PORT = process.env.PORT || 9000;
 const dbURL = process.env.DB_URL || 'mongodb://127.0.0.1:27017'
 app.use("/auth",userAuth)
 
-    
-
 app.get("/",authorize,async(req,res)=>{
     try {
         let client = await MongoClient.connect(dbURL);
