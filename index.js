@@ -5,7 +5,6 @@ const {MongoClient,ObjectID} = require('mongodb')
 const cors = require("cors");
 const userAuth = require('./userAuth')
 const authorize = require('./authorize');
-const res = require('express/lib/response');
 const io = require("socket.io")(server, {
 	cors: {
 		origin: "*",
